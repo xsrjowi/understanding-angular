@@ -1,0 +1,39 @@
+<!-- 
+  Habitualmente, evitaremos el uso de lógica en la vista (mvc) 
+
+  <h1>{{ titulo }}</h1>
+  <br>
+  <button (click) = "numero = numero + 1">+1</button>
+  <span> {{ numero }}</span>
+  <button (click) = "numero = numero - 1">-1</button>
+-->
+
+<!--
+  En este caso, cada vez que presionamos los correspondientes botones,
+    se incrementa o decrementa el numero correspondiente
+    
+  <h1>{{ titulo }}</h1>
+  <br>
+  <button (click) = "acumular(+1)">+ {{ base }}</button>
+  <span> {{ numero }}</span>
+  <button (click) = "acumular(-1)">-1</button>
+-->
+
+<h1>{{ titulo }}</h1>
+<br>
+<h3>La base es {{ base }}</h3>
+<button (click) = "acumular5('+')">+ {{ base }}</button>
+<span> {{ numero }}</span>
+<button (click) = "acumular5('-')">- {{ base }}</button>
+
+<!--
+  La solución propuesta al punto anterior era:
+
+  <h1>{{ titulo }}</h1>
+  <br>
+  <h3>La base es {{ base }}</h3>
+  <button (click) = "acumular5(base)">+ {{ base }}</button>
+  <span> {{ numero }}</span>
+  <button (click) = "acumular5(-base)">- {{ base }}</button>
+
+-->

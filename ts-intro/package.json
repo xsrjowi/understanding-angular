@@ -1,0 +1,23 @@
+{
+  "dev": "NODE_OPTIONS='--openssl-legacy-provider' ...",
+  "name": "rxjs-dev",
+  "version": "1.0.0",
+  "description": "* Lo primero que debemos de hacer después de descargar el código es ejecutar el comando:",
+  "main": "index.js",
+  "dependencies": {
+    "webpack": "^4.40.2",
+    "webpack-dev-server": "^3.8.1"
+  },
+  "devDependencies": {
+    "css-loader": "^3.2.0",
+    "ts-loader": "^6.1.2",
+    "typescript": "^5.0.3",
+    "webpack-cli": "^3.3.9"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open --port=8081",
+    "debug": "NODE_OPTIONS='--openssl-legacy-provider' next dev -p 5000"
+  },
+  "author": "",
+  "license": "ISC"
+}

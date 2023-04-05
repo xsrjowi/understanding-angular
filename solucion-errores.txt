@@ -1,0 +1,11 @@
+Si produce un error por HASH, añade la siguiente linea en la parte superior del archivo `package.json` (elimina el error de versiones)
+"dev": "NODE_OPTIONS='--openssl-legacy-provider' ...",
+
+- Este mismo error, es possible solucionarlo mediante : [pws]
+  · set NODE_OPTIONS=--openssl-legacy-provider
+  · $env:NODE_OPTIONS = "--openssl-legacy-provider"
+(A tener en cuenta que no se muestra una persistencia, es decir, que habrá que hacerlo cada que se cierre la terminal)
+
+
+Si también produce errores en ts.. (errores que marquen que faltan caracteres en typescript)
+para solucionarlo, instala la última versión de typescript : (npm install typescript@latest --save-dev)
