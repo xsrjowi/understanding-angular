@@ -1,0 +1,24 @@
+<h3>Agregar</h3>
+<hr>
+
+<form (ngSubmit)="agregar($event)">
+    <!--
+        El valor apunta directamente a la propiedad nombre de 'nuevo' en nuestro componente 
+    -->
+    <input 
+        type="text" 
+        placeholder="Nombre"
+        name="nombre"
+        [(ngModel)]="nuevo.nombre"
+    />
+    <input
+        type="number" 
+        placeholder="Poder"
+        name="poder"
+        [(ngModel)]="nuevo.poder"
+    />
+
+    <button type="submit">
+        Agregar
+    </button>
+</form>

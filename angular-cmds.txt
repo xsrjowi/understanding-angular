@@ -1,0 +1,11 @@
+[Comandos de interés - AngularJS]:
+
+Crear nuevo proyecto : 
+  ng new <nombre>
+
+Generar nuevo componente : 
+  ng generate component <nombre>
+  ng g c <nombre>
+
+Generar nuevo componente (sin tests) :
+  ng generate component <nombre> --skip-tests
