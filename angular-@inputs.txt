@@ -1,0 +1,7 @@
+Al trabajar con elementos sub-adheridos, deberemos estar pendientes de conectarlos mediante las etiquetas de aplicación pertinentes, y añadiendo dentro del método de export de la clase, espocificando el decorador @Input seguido de los atributos pertinentes que váya a recibir, tal y como se muestra a continuación (Ejemplo personajes - DBZ):
+
+export class PersonajesComponent {
+  @Input() personajes: any[] = [];
+}
+
+En el ejemplo anterior, se muestra que 

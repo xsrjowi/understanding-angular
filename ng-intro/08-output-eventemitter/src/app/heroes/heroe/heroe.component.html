@@ -1,0 +1,29 @@
+<h3>{{ nombre }}</h3>
+
+<!--
+    La etiqueta DL, actua como un th (tabla) - descriptive list
+-->
+<dl>
+    <td>Nombre:</td>
+    <dd>{{ nombre }}</dd>
+
+    <br>
+
+    <td>Edad:</td>
+    <dd>{{ edad }}</dd>
+
+    <br>
+
+    <td>Función:</td>
+    <dd>{{ obtenerNombre() }}</dd>
+
+    <br>
+
+    <td>Capitalizado:</td>
+    <dd>{{ nombreCapitalizado }}</dd>
+</dl>
+
+<br>
+
+<button (click) = "cambiarNombre()">Cambiar Heroe</button>
+<button (click) = "cambiarEdad()">Cambiar Edad</button>
