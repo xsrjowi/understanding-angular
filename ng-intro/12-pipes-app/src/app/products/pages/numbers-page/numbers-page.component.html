@@ -1,0 +1,32 @@
+<p-panel [showHeader]="false" class="pt-2">
+    <h1>Pipes Numéricos</h1>
+    <p>
+        Pipes incluidos en Angular - Usualmente en el Common Module
+    </p>
+</p-panel>
+
+<!--
+    Todo: Agregar necesarios para utilizar los estilos de 'PrimeFlex'
+-->
+
+<div class="grid">
+    <div class="col-12 md:col-4">
+        <p-card header="Ventas Netas" subheader="del presente año">
+            {{ (totalSells + 1235) | number: '1.2-2' }}
+        </p-card>
+    </div>
+    
+    <div class="col-12 md:col-4">
+        <p-card header="Ventas Brutas" subheader="del presente año">
+            <!-- ? De 4 decimales a 4 decimales -->
+            {{ totalSells | currency:'EUR':'symbol-narrow':'1.4-4' }}
+        </p-card>
+    </div>
+    
+    <div class="col-12 md:col-4">
+        <p-card header="Ganancias Porcentual" subheader="del presente año">
+            <!-- ? Con 2 decimales -->
+            {{ percent | percent: '1.2-2' }}
+        </p-card>
+    </div>
+</div>

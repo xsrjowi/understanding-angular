@@ -1,0 +1,108 @@
+<p-panel [showHeader]="false" class="pt-2">
+    <h1>Pipes Numéricos</h1>
+    <p>
+        Pipes incluidos en Angular - Usualmente en el Common Module
+    </p>
+</p-panel>
+
+<br>
+
+<div class="grid">
+    <!--
+        ? Utiliza el pipe 'i18nSelect' para seleccionar la palabra adiente que mostrar
+        ? En caso de que se amplie el 'gender' y no se disponga de una opción adiente, no se mostrará valor
+    -->
+    <div class="col-12 md:col-6">
+        <p-fieldset legend="i18nSelect Pipe" [toggleable]="true">
+            <p>
+                Saludos {{ name }}, es un placer
+                {{ gender | i18nSelect: invitationMap }} a nuestro evento
+            </p>
+
+            <p-button
+                (click)="changeClient()"
+                label="Cambiar persona"
+            >
+            </p-button>
+        </p-fieldset>
+    </div>
+
+    <div class="col-12 md:col-6">
+        <p-fieldset legend="i18nSelect Plural" [toggleable]="true">
+            <p>
+                Actualmente {{ clients.length | i18nPlural: clientsMap }} clientes esperando
+            </p>
+            <p-button
+                (click)="deleteClient()"
+                label="Borrar Cliente"
+            >
+            </p-button>
+        </p-fieldset>
+    </div>
+
+    <div class="col-12 md:col-6">
+        <p-fieldset legend="Slice Pipe" [toggleable]="true">
+            <b>Original</b>
+            <!-- ? Muestra los clientes del índice 0 al 2 | (Muestra el 0 y el 1) -->
+            <pre>{{ clients | slice: 0:clients.length}}</pre>
+
+            <b>Slice 1:2</b>
+            <!-- ? Muestra los clientes del índice 1 al 2 | (Muestra el 1) -->
+            <pre>{{ clients | slice: 1:2 }}</pre>
+
+            <b>Slice 1:3</b>
+            <!-- ? Muestra los clientes del índice 1 al 3 | (Muestra el 1 y el 2) -->
+            <pre>{{ clients | slice: 1:3 }}</pre>
+
+            <b>Slice 3:4</b>
+            <!-- ? Muestra los clientes del índice 3 al 4 | (Muestra el 3) -->
+            <pre>{{ clients | slice: 3:4 }}</pre>
+
+            <b>Slice 0:-2</b>
+            <!-- ? Muestra los clientes del índice 1 al final, menos los 2 últimos -->
+            <pre>{{ clients | slice: 0:-2 }}</pre>
+        </p-fieldset>
+    </div>
+
+    <div class="col-12 md:col-6">
+        <p-fieldset legend="Json Pipe" [toggleable]="true">
+            {{ person | json }}
+            
+            <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+        </p-fieldset>
+    </div>
+
+    <div class="col-12 md:col-6">
+        <p-fieldset legend="KeyValue Pipe" [toggleable]="true">
+            <ul>
+                <!-- 
+                    ? Para poder iterar sobre un formato Json, deberemos especificar el pipe 'keyvalue' 
+                    *   Este, indicará que nos referiremos a los valores del objeto mediante sus llaves
+                -->
+                <li *ngFor="let item of person | keyvalue">
+                    {{ item | json }}
+                </li>
+            </ul>
+
+            <br> <hr> <br>
+
+            <ul>
+                <!-- ? Para mostrar los atributos a mejor vista del usuario, podemos hacerlo de esta forma -->
+                <li *ngFor="let item of person | keyvalue">
+                    <b>{{ item.key | titlecase }}: </b> {{ item.value }}
+                </li>
+            </ul>
+        </p-fieldset>
+    </div>
+
+    <!-- ? Permite escuchar una promesa. En caso de no ser de utilizad, la limpia -->
+    <div class="col-12 md:col-6">
+        <p-fieldset legend="Async Pipe" [toggleable]="true">
+            <pre *ngIf="(myObservableTimer | async)">Resolviendo observable</pre>
+            <pre>{{ myObservableTimer | async }}</pre>
+            
+            <pre *ngIf="(myObservableTimer | async)">Resolviendo promesa</pre>
+            <pre>{{ promiseValue | async }}</pre>
+        </p-fieldset>
+    </div>
+</div>

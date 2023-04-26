@@ -1,0 +1,76 @@
+<p-panel [showHeader]="false" class="pt-2">
+    <h1>Pipes Básicos</h1>
+    <p>
+        Pipes incluidos en Angular - Usualmente en el Common Module
+    </p>
+</p-panel>
+
+<!-- ? Divide la pantalla en 12 columnas (col-12) y asignale X al div (md:col-X) -->
+
+
+<div class="grid">
+    <div class="col-12 md:col-4">
+        <p-card header="uppercase">
+            {{ nameLower | uppercase }}
+        </p-card>
+    </div>
+    
+    <div class="col-12 md:col-4">
+        <p-card header="lowercase">
+            {{ nameUpper | lowercase }}
+        </p-card>
+    </div>
+    
+    <div class="col-12 md:col-4">
+        <p-card header="titlecase">
+            {{ fullName | titlecase }}
+        </p-card>
+    </div>
+    
+    <div class="col-12 md:col-6">
+        <p-card header="titlecase">
+            <ol>
+                <li>Date</li>
+                <li>Date | date</li>
+                <li>Date | date:'short'</li>
+                <li>Date | date:'long'</li>
+                <li>Date | date:'MMM'</li>
+                <li>Date | date:'MMM, dd, yyyy'</li>
+            </ol>
+            
+            <hr>
+
+            <ol>
+                <li>Date | date:'long':'GMT-6'</li>
+                <li>Date | date:'long':'GMT-4'</li>
+                <li>Date | date:'long':'':'es-HN'</li>
+                <li>Date | date:'long':'':'en-US'</li>
+                <li>Date | date:'long':'':'fr-CA'</li>
+            </ol>
+        </p-card>
+    </div>
+    
+    <div class="col-12 md:col-6">
+        <p-card header="titlecase">
+            <ol>
+                <li>{{ customDate }}</li>
+                <li>{{ customDate | date }}</li>
+                <li>{{ customDate | date:'short' }}</li>
+                <li>{{ customDate | date:'long' }}</li>
+                <li>{{ customDate | date:'MMM, dd, yyyy' }}</li>
+            </ol>
+
+            <hr>
+            
+            <ol>
+                <li>{{ customDate | date:'long':'GMT-6'}}</li>
+                <li>{{ customDate | date:'long':'GMT-4'}}</li>
+                <li>{{ customDate | date:'long':'':'es-HN' }}</li>
+                <li>{{ customDate | date:'long':'':'en-US' }}</li>
+                <li>{{ customDate | date:'long':'':'fr-CA' }}</li>
+            </ol>
+        </p-card>
+    </div>
+
+
+</div>
