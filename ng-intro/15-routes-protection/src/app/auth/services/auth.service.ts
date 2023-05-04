@@ -28,15 +28,19 @@ export class AuthService {
     }
 
     // ! En el ejemplo, devuelve un Observable<boolean> | boolean
-    checkAutentication(): Observable<User> | boolean {
-        if(!localStorage.getItem("token")) return false;
+    // Todo: Corregir error -> Se devuelve Observable<User> en vez de Observable<boolean> 
+    checkAutentication(): Observable<boolean> {
+        if(!localStorage.getItem("token")) return of(false);
         const token = localStorage.getItem("token");
         
-        return this.http.get<User>(`${ this.baseUrl }/users/1`)
+        var checkUser = this.http.get<User>(`${ this.baseUrl }/users/1`)
             .pipe(
                 tap(user => this.user = user),
                 tap(user => !!user),
-            )
+                catchError(err => of(false))
+            );
+        
+        return of(true);
     }
 
     logout() {
