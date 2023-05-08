@@ -1,0 +1,10 @@
+
+#map {
+    /*
+        Definimos:
+          vw => Tamño máximo de la pantalla (view width)
+          vh => Tamño máximo de la pantalla (view height)
+    */
+    width: 100vw;
+    height: 100vh;
+}

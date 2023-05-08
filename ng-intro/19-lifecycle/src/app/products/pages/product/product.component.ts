@@ -50,5 +50,4 @@ export class ProductComponent implements OnInit, OnDestroy, OnChanges, DoCheck, 
     this.currentPrice++;
   }
 
-
 }
