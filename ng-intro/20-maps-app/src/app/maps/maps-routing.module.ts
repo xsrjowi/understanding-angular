@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router'
-;
+import { RouterModule, Routes } from '@angular/router';
+
 import { MapsLayoutComponent } from './layout/maps-layout/maps-layout.component';
 
 import { FullScreenPageComponent } from './pages/full-screen-page/full-screen-page.component';

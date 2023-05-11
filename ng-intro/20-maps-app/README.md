@@ -32,6 +32,8 @@ Posteriormente a la creación del script y por tal de poder utilizarlo, deberemo
 
 Hay que **tener en cuenta** que este script únicamentes se ejecutará cuando nosotros manualmente utilicemos el designado comando (`npm run envs`), y **no se ejecutará** cuando utilicemos el comando (`ng serve`).
 
+Aun que no sea habitual, podemos observar que nosotros, en el archivo `package.json`, hemos sobreescrito el script **start**, para que en caso de no haber realizado el paso anterior, se genere automáticamente.
+Para ello, hemos *concatenado dos instrucciones* en el mismo comando, mediante `"start": "npm run envs && ng serve"`.
 
 ## Instalando MapBox:
 

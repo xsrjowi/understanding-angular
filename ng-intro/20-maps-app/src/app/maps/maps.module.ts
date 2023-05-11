@@ -13,6 +13,7 @@ import { MarkersPageComponent } from './pages/markers-page/markers-page.componen
 import { PropertiesPageComponent } from './pages/properties-page/properties-page.component';
 import { ZoomRangePageComponent } from './pages/zoom-range-page/zoom-range-page.component';
 
+
 @NgModule({
   declarations: [
     MiniMapComponent,
@@ -28,5 +29,4 @@ import { ZoomRangePageComponent } from './pages/zoom-range-page/zoom-range-page.
     MapsRoutingModule
   ]
 })
-
 export class MapsModule { }

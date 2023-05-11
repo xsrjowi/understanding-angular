@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 interface MenuItem {
-  name: string;
+  name : string;
   route: string;
 }
 
@@ -17,5 +17,5 @@ export class SideMenuComponent {
     { route: '/maps/zoom-range', name: 'ZoomRange' },
     { route: '/maps/markers', name: 'Markers' },
     { route: '/maps/properties', name: 'Houses' },
-  ]
+  ];
 }
