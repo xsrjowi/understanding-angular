@@ -8,21 +8,42 @@ import { PreciosComponent } from './components/precios/precios.component';
 import { ProtegidaComponent } from './components/protegida/protegida.component';
 import { CallbackComponent } from './components/callback/callback.component';
 
-
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'precios', component: PreciosComponent },
+  { 
+    path: 'home', 
+    component: HomeComponent 
+  },
+  { 
+    path: 'precios', 
+    component: PreciosComponent 
+  },
   { 
     path: 'protegida',
     component: ProtegidaComponent,
-    canActivate: [ AuthGuard ]
+    canActivate: [ 
+      AuthGuard 
+    ]
   },
-  { path: 'callback', component: CallbackComponent },
-  { path: '**', pathMatch: 'full', redirectTo: 'home' }
+  { 
+    path: 'callback', 
+    component: CallbackComponent 
+  },
+  { 
+    path: '**', 
+    pathMatch: 'full', 
+    redirectTo: 'home' 
+  }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes)
+  ],
+  exports: [
+    RouterModule
+  ]
 })
-export class AppRoutingModule { }
+
+export class AppRoutingModule {
+  
+}

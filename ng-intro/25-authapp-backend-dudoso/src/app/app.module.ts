@@ -23,6 +23,9 @@ import { CallbackComponent } from './components/callback/callback.component';
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
+
 export class AppModule { }

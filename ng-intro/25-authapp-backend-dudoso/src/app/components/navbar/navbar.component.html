@@ -3,21 +3,22 @@
 
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
-        
         <li class="nav-item" routerLinkActive="active">
           <a class="nav-link" routerLink="/home">Home</a>
         </li>
+
         <li class="nav-item" routerLinkActive="active">
           <a class="nav-link" routerLink="/precios">Precios</a>
         </li>
+
         <li class="nav-item" 
             routerLinkActive="active"
             *ngIf="auth.loggedIn">
           <a class="nav-link" routerLink="/protegida">Protegida</a>
         </li>
       </ul>
+
       <span class="navbar-text">
-        
           <button *ngIf="!auth.loggedIn"
                   (click)="auth.login()"
                   class="btn btn-outline-primary">
@@ -29,8 +30,6 @@
                   class="btn btn-outline-danger">
             Salir
           </button>
-
-
       </span>
     </div>
 </nav>

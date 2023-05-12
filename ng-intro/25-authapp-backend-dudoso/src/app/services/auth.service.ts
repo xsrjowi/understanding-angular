@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import createAuth0Client from '@auth0/auth0-spa-js';
 import Auth0Client from '@auth0/auth0-spa-js/dist/typings/Auth0Client';
+
 // import * as config from '../../../auth_config.json';
+
 import { from, of, Observable, BehaviorSubject, combineLatest, throwError } from 'rxjs';
 import { tap, catchError, concatMap, shareReplay } from 'rxjs/operators';
 import { Router } from '@angular/router';
@@ -9,6 +11,7 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
   // Create an observable of Auth0 instance of client
   auth0Client$ = (from(
@@ -25,13 +28,16 @@ export class AuthService {
   // For each Auth0 SDK method, first ensure the client instance is ready
   // concatMap: Using the client instance, call SDK method; SDK returns a promise
   // from: Convert that resulting promise into an observable
+  
   isAuthenticated$ = this.auth0Client$.pipe(
-    concatMap((client: Auth0Client) => from(client.isAuthenticated())),
+    concatMap( (client: Auth0Client) => from(client.isAuthenticated()) ),
     tap(res => this.loggedIn = res)
   );
+  
   handleRedirectCallback$ = this.auth0Client$.pipe(
-    concatMap((client: Auth0Client) => from(client.handleRedirectCallback()))
+    concatMap( (client: Auth0Client) => from(client.handleRedirectCallback()) ),
   );
+
   // Create subject and public observable of user profile data
   private userProfileSubject$ = new BehaviorSubject<any>(null);
   userProfile$ = this.userProfileSubject$.asObservable();
@@ -117,9 +123,8 @@ export class AuthService {
       // Call method to log out
       client.logout({
         client_id: "JaeWH01OBrXsxHSFBY4wdAz6Rj9cthOZ",
-        returnTo: `${window.location.origin}`
+        returnTo: `${ window.location.origin }`
       });
     });
   }
-
 }

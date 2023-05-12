@@ -1,0 +1,3 @@
+
+Para poder llevar un control mas práctico de la aplicación, y mantener una sincronia con github: https://railway.app/
+Atlas MNG: https://www.mongodb.com/atlas/database

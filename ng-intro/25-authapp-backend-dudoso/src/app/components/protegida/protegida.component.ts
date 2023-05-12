@@ -6,9 +6,11 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './protegida.component.html',
   styles: []
 })
-export class ProtegidaComponent implements OnInit {
 
-  constructor( public auth: AuthService ) { }
+export class ProtegidaComponent implements OnInit {
+  constructor(
+    public auth: AuthService
+  ) { }
 
   ngOnInit() {
     console.log('ngOnInit protegida');
@@ -16,5 +18,4 @@ export class ProtegidaComponent implements OnInit {
       console.log(perfil);
     });
   }
-
 }

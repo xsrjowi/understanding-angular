@@ -6,11 +6,9 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './navbar.component.html',
   styles: []
 })
-export class NavbarComponent implements OnInit {
 
+export class NavbarComponent implements OnInit {
   constructor( public auth: AuthService ) { }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() { }
 }
