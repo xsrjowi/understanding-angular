@@ -10,6 +10,7 @@ export class AngularLogoComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }
